@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Turn your files into soup">
+        <title>File Soup</title>
+    </head>
+
+    <body>
+        <header class="app-header">
+            <div class="brand">
+                <svg class="header-logo" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" xmlns="http://www.w3.org/2000/svg" aria-label="food" viewBox="0 0 32 32" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="256" height="256"><path d="M21.9998 17.4244C21.9998 16.5118 22.6579 15.7538 23.3893 15.2082C24.3668 14.4789 24.9998 13.3134 24.9998 12C24.9998 9.79086 23.209 8 20.9998 8C18.7907 8 16.9998 9.79086 16.9998 12C16.9998 13.3134 17.6328 14.4789 18.6103 15.2082C19.3418 15.7538 19.9998 16.5118 19.9998 17.4244V23.125C19.9998 23.608 20.4478 24 20.9998 24C21.5518 24 21.9998 23.608 21.9998 23.125V17.4244Z"/><path d="M9 9C9 8.44772 8.55228 8 8 8C7.44772 8 7 8.44772 7 9V13C7 13.8252 7.40255 14.5668 7.91789 15.0821C8.21882 15.383 8.59688 15.6455 9.02369 15.8118C9.53829 16.0123 10 16.4477 10 17V23C10 23.5523 10.4477 24 11 24C11.5523 24 12 23.5523 12 23V17C12 16.4477 12.4617 16.0123 12.9763 15.8118C13.4031 15.6455 13.7812 15.383 14.0821 15.0821C14.5975 14.5668 15 13.8252 15 13V9C15 8.44772 14.5523 8 14 8C13.4477 8 13 8.44772 13 9V13C13 13.1748 12.9025 13.4332 12.6679 13.6679C12.3698 13.966 12 13.6582 12 13.2366V9C12 8.44772 11.5523 8 11 8C10.4477 8 10 8.44772 10 9V13.2366C10 13.6582 9.63025 13.966 9.33211 13.6679C9.09745 13.4332 9 13.1748 9 13V9Z"/></svg>
+                <h1>File Soup</h1>
+                <p>The kitchen of questionable files.</p>
+            </div>
+        </header>
+
+        <main class="app-main">
+            <section class="files-section" aria-labelledby="files-heading">
+                <div class="section-header">
+                    <h2 id="files-heading">Your ingredients</h2>
+                    <button id="add-files">
+                        <svg fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" xmlns="http://www.w3.org/2000/svg" aria-label="plus" viewBox="0 0 32 32" preserveAspectRatio="xMidYMid meet" fill="currentColor" width="256" height="256"><path d="M16,6c5.1,0 7.247,0.575 8.336,1.664c1.089,1.089 1.664,3.236 1.664,8.336c0,5.1 -0.575,7.247 -1.664,8.336c-1.089,1.089 -3.236,1.664 -8.336,1.664c-5.1,0 -7.247,-0.575 -8.336,-1.664c-1.089,-1.089 -1.664,-3.236 -1.664,-8.336c0,-5.1 0.575,-7.247 1.664,-8.336c1.089,-1.089 3.236,-1.664 8.336,-1.664Zm0,-2c10,0 12,2 12,12c0,10 -2,12 -12,12c-10,0 -12,-2 -12,-12c0,-10 2,-12 12,-12Zm-1,8c0,-0.552 0.448,-1 1,-1c0.552,0 1,0.448 1,1l0,3l3,0c0.552,0 1,0.448 1,1c0,0.552 -0.448,1 -1,1l-3,0l0,3c0,0.552 -0.448,1 -1,1c-0.552,0 -1,-0.448 -1,-1l0,-3l-3,0c-0.552,0 -1,-0.448 -1,-1c0,-0.552 0.448,-1 1,-1l3,0l0,-3Z"/></svg>
+                        Add ingredients
+                    </button>
+                </div>
+
+                <input id="file-input" type="file" multiple hidden>
+
+                <div id="file-list" class="file-list">
+                    <p id="empty">Your pot is empty! Add some ingedients to start cooking...</p>
+                </div>
+            </section>
+
+            <section class="processing-section" aria-labelledby="processing-heading">
+                <h2 id="processing-heading">The kitchen</h2>
+                <div id="processing-status" role="status" aria-live="polite">Ready to cook</div>
+                <progress id="processing-progress" value="0" max="100"></progress>
+
+                <div class="processing-actions">
+                    <button id="encode-button">Mixy mixy</button>
+                    <button id="decode-button">Orpheus doesn't like his soup...</button>
+                </div>
+            </section>
+
+            <section class="output-section" aria-labelledby="output-heading">
+                <h2 id="output-heading">Takeaway counter</h2>
+                <div id="output-info">
+                    <p>No soup yet. Let's cook something...</p>
+                </div>
+
+                <button id="export-button" disabled>Takeaway</button>
+                <button id="checksum-check" disabled>Taste test</button>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>Made with HTML, CSS, JS, and coffee.</p>
+            <p id="kitchen-stats">Days since last Orpheus incident: 0</p>
+        </footer>
+    </body>
+</html>
