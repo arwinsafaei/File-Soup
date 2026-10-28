@@ -1,0 +1,352 @@
+:root {
+    color-scheme: light;
+
+    --background: #f6f5ef;
+    --surface: #fffefa;
+    --surface-hover: #f9f8f1;
+
+    --text: #30382f;
+    --text-muted: #858a7d;
+
+    --green: #668568;
+    --green-light: #e8efe4;
+    --green-dark: #4f7052;
+
+    --orange: #d99462;
+    --orange-light: #f8eade;
+
+    --border: #e6e5da;
+    --danger: #b96858;
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 22px;
+
+    --shadow: 0 4px 18px rgb(48 56 47 / 5%);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Nunito", "Trebuchet MS", sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background: var(--background);
+    color: var(--text);
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+h1, h2, p {
+    line-height: 1.25;
+    letter-spacing: -0.03em;
+}
+
+h1 {
+    margin-bottom: 2px;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+h2 {
+    margin-bottom: 0;
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.brand p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.app-header {
+    padding: 22px 28px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.app-header svg {
+    margin: -6px;
+    margin-bottom: -20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.header-logo {
+    width:42px;
+    height: 42px;
+    flex-shrink: 0;
+    color: var(--green);
+}
+
+.brand h1 {
+    display: inline;
+}
+
+.brand p {
+    flex-basis: 100%;
+    margin-top: -6px;
+}
+
+.app-main {
+    width: min(100% - 40px, 900px);
+    margin: 36px auto;
+    display: grid;
+    gap: 22px;
+}
+
+.files-section, .processing-section, .output-section {
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 42px;
+    padding: 10px 16px;
+
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+
+    background: var(--green);
+    color: white;
+
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition:
+        background 160ms ease,
+        border-color 160ms ease,
+        transform 160ms ease;
+}
+
+button:hover:not(:disabled) {
+    background: var(--green-dark);
+}
+
+button:active:not(:disabled) {
+    transform: translateY(1px);
+}
+
+button:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 3px;
+}
+
+button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+button svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+#add-files {
+    background: var(--green-light);
+    color: var(--green-dark);
+    border-color: #d9e4d5;
+}
+
+#add-files:hover {
+    background: #dce8d7;
+}
+
+.file-list {
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding: 18px;
+    border: 2px dashed var(--border);
+    border-radius: var(--radius-md);
+
+    background: #fcfbf6;
+}
+
+#empty {
+    margin: auto;
+    padding: 24px 8px;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.processing-section, .output-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+#processing-status {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+progress {
+    display: block;
+    width: 100%;
+    height: 9px;
+    overflow: hidden;
+
+    border: 0;
+    border-radius: 999px;
+
+    background: var(--green-light);
+    accent-color: var(--green);
+}
+
+progress::-webkit-progress-bar {
+    background: var(--green-light);
+    border-radius: 999px;
+}
+
+progress::-webkit-progress-value {
+    background: var(--green);
+    border-radius: 999px;
+}
+
+.processing-actions {
+    display: flex;
+    align-items: stretch;
+    gap: 12px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#encode-button {
+    background: var(--green);
+}
+
+#decode-button {
+    background: var(--orange-light);
+    color: #865b3e;
+    border-color: #f0dac7;
+}
+
+#decode-button:hover:not(:disabled) {
+    background: #f1dfce;
+}
+
+#output-info {
+    width: 100%;
+    color: var(--text-muted);
+}
+
+#export-button {
+    background: var(--orange);
+}
+
+#export-button:hover:not(:disabled) {
+    background: #c17c4c;
+}
+
+#checksum-check {
+    background: var(--green-light);
+    color: var(--green-dark);
+    border-color: #d9e4d5;
+}
+
+#checksum-check:hover:not(:disabled) {
+    background: #dce8d7;
+}
+
+.app-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    padding: 20px 28px;
+    border-top: 1px solid var(--border);
+
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.app-footer p {
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .app-header {
+        padding: 18px 20px;
+    }
+
+    .app-main {
+        width: calc(100% - 24px);
+        margin: 18px auto;
+        gap: 14px;
+    }
+
+    .files-section, .processing-section, .output-section {
+        padding: 18px;
+        border-radius: var(--radius-md);
+    }
+
+    .section-header {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .section-header button {
+        align-self: flex-start;
+    }
+
+    .processing-actions {
+        flex-direction: column;
+    }
+
+    .processing-actions button {
+        width: 100%;
+    }
+
+    .app-footer {
+        padding: 18px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
