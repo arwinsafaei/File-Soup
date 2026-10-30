@@ -278,6 +278,13 @@ progress::-webkit-progress-bar {
 progress::-webkit-progress-value {
     background: var(--green);
     border-radius: 999px;
+    transition: width 125ms ease-out;
+}
+
+progress::-moz-progress-bar {
+    background: var(--green);
+    border-radius: 999px;
+    transition: width 125ms ease-out;
 }
 
 .processing-actions {
